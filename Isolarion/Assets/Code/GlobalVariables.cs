@@ -6,7 +6,7 @@ using AsserTOOLres;
 namespace Iso {
 	public class GlobalVariables : Singleton<GlobalVariables> {
 
-		public LayerMask pinCheckMask;
+		public float pathHight = 0.2f;
 		public float feedbackLineLifetime = 1.0f;
 		public GameObject feedbackLinePrefab;
 	}

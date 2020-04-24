@@ -2,23 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using AsserTOOLres;
+using UnityEngine.AI;
 
 namespace Iso {
 	public class PinHandle : Multiton<PinHandle> {
-
-		public Transform r_Head;
-
-		void Start() {
-			if(!r_Head) {
-				Debug.LogError("FATAL: No Head Reference set.");
-				Destroy(this);
-				return;
-			}
-		}
-
-		void Update() {
-
-		}
 
 		public static bool CheckPins() {
 			foreach(var it in s_references) {
@@ -36,9 +23,17 @@ namespace Iso {
 					continue;
 				}
 
-				if(!Physics.Linecast(r_Head.position, it.r_Head.position, GlobalVariables.s_instance.pinCheckMask)) {
-					StartCoroutine(HandleFeedbackLine(r_Head.position, it.r_Head.position));
-					return false;
+				NavMeshPath path = new NavMeshPath();
+				if(NavMesh.CalculatePath(transform.position, it.transform.position, NavMesh.AllAreas, path)) {
+					if(path.corners[path.corners.Length-1].x == it.transform.position.x &&
+						path.corners[path.corners.Length - 1].z == it.transform.position.z) {
+						path.corners[0].y = GlobalVariables.s_instance.pathHight;
+						for(int i = 1; i < path.corners.Length; i++) {
+							path.corners[i].y = GlobalVariables.s_instance.pathHight;
+							StartCoroutine(HandleFeedbackLine(path.corners[i - 1], path.corners[i]));
+						}
+						return false;
+					}
 				}
 			}
 
@@ -48,12 +43,12 @@ namespace Iso {
 		IEnumerator HandleFeedbackLine(Vector3 start, Vector3 end) {
 			GameObject line = Instantiate(GlobalVariables.s_instance.feedbackLinePrefab);
 
-			float size = (start - end).magnitude;
 			line.transform.position = start;
-			line.transform.rotation = Quaternion.LookRotation(end - start, transform.up);
-			line.transform.localScale = new Vector3(size, size, size);
+			line.transform.rotation = Quaternion.LookRotation(end - start, Vector3.up);
+			line.transform.localScale = new Vector3(1.0f, 1.0f, (start - end).magnitude);
 
 			yield return new WaitForSeconds(GlobalVariables.s_instance.feedbackLineLifetime);
+
 			Destroy(line);
 		}
 	}
