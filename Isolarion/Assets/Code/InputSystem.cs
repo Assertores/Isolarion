@@ -8,6 +8,7 @@ namespace Iso {
 
 		[SerializeField] LayerMask shapeMask;
 		[SerializeField] LayerMask curserMask;
+		[SerializeField] float rotationSpeed = 1.0f;
 
 		GameObject currentObject;
 		Vector3 offset;
@@ -24,15 +25,19 @@ namespace Iso {
 				currentObject = null;
 			}
 
-			if(currentObject) {
-				if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),
-				out RaycastHit hit,
-				1000.0f,
-				curserMask)) {
-
-					currentObject.transform.position = hit.point + offset;
-				}
+			if(!currentObject) {
+				return;
 			}
+
+			if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),
+			out RaycastHit hit,
+			1000.0f,
+			curserMask)) {
+
+				currentObject.transform.position = hit.point + offset;
+			}
+
+			currentObject.transform.Rotate(transform.up, Input.mouseScrollDelta.y * rotationSpeed);
 		}
 
 		Vector3 GetShape(out GameObject target) {
