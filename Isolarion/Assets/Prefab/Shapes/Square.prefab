@@ -43,6 +43,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3754649980825794984}
+  - component: {fileID: -565482920672605219}
   m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
@@ -67,6 +68,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-565482920672605219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754649980825794985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de18a57ff4d0a034292706ad6b3f3cec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &3754649981931080576
 MeshCollider:
   m_ObjectHideFlags: 0
