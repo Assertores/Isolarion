@@ -63,6 +63,7 @@ Transform:
   m_Children:
   - {fileID: 8169959141280080029}
   - {fileID: 6298024886455938585}
+  - {fileID: 2263672073013928032}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -268,6 +269,50 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!1 &7594157625450833397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2263672073013928032}
+  - component: {fileID: 4312598585944047361}
+  m_Layer: 9
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2263672073013928032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7594157625450833397}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3754649980825794984}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4312598585944047361
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7594157625450833397}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.06, z: 1}
+  m_Center: {x: 0, y: 0.12, z: 0}
 --- !u!1001 &3754649981931080583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -333,7 +378,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 98de462b20a56a7448782eb845d4bea5,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.544188
+      value: 0.1049384
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 98de462b20a56a7448782eb845d4bea5,
         type: 3}
