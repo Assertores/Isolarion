@@ -47,16 +47,28 @@ namespace Iso {
 				1000.0f,
 				shapeMask)) {
 
-				// TODO: evel stuff dont yous root
-				target = hit.collider.transform.root.gameObject;
+				target = FindShapeParant(hit.collider.gameObject);
+				if(!target) {
+					return Vector3.zero;
+				}
 
 				Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),
 				out hit,
 				1000.0f,
 				curserMask);
+
 				return target.transform.position - hit.point;
 			}
 			return Vector3.zero;
+		}
+
+		GameObject FindShapeParant(GameObject child) {
+			for(GameObject element = child; element.transform != child.transform.root; element = element.transform.parent.gameObject) {
+				if(element.GetComponent<ShapeHandle>()) {
+					return element;
+				}
+			}
+			return child.transform.root.gameObject.GetComponent<ShapeHandle>() ? child.transform.root.gameObject : null;
 		}
 	}
 }
