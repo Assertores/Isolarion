@@ -20,6 +20,7 @@
 - VFX
 - Credits
 - postProcessing
+- icon
 
 ## LevelDesign
 
