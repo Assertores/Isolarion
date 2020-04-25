@@ -15,6 +15,7 @@ namespace Iso {
 		[SerializeField] float inTransitionTime = 0.5f;
 		[SerializeField] AnimationCurve inTransitionScale;
 		[SerializeField] bool resetProggres = false;
+		[SerializeField] float spawnRandomPositionDeviation = 0.2f;
 
 		int currentLevel = 0;
 
@@ -65,16 +66,18 @@ namespace Iso {
 
 		public bool NextLevel() {
 			currentLevel++;
-			if(currentLevel < levels.Length) {
-				StartCoroutine(IELevelChangeOut(levels[currentLevel]));
-				return true;
+			if(currentLevel >= levels.Length) {
+				return false;
 			}
+			StartCoroutine(IELevelChangeOut(levels[currentLevel]));
 			return false;
 		}
 
 		IEnumerator IELevelChangeOut(LevelData nextLevel) {
 			GlobalVariables.s_instance.isInTransition = true;
 			float startTime = Time.time;
+
+			// TODO: play Level finish sound
 
 			// TODO: seamce computationally intensive. may use animations insted
 			while(startTime + outTransitionTime > Time.time) {
@@ -92,6 +95,8 @@ namespace Iso {
 		IEnumerator IELevelChangeIn(LevelData nextLevel) {
 			GlobalVariables.s_instance.isInTransition = true;
 			float startTime = Time.time;
+
+			// TODO: play Level start sound
 
 			List<GameObject> pins;
 			List<GameObject> shapes;
@@ -137,8 +142,15 @@ namespace Iso {
 
 			foreach(var it in level.Shapes) {
 				var element = Instantiate(it, levelHolder);
-				element.transform.position = shapeSpawnPosition.position;
+
+				var pos = shapeSpawnPosition.position;
+				var rand = Random.insideUnitCircle * spawnRandomPositionDeviation;
+				pos.x += rand.x;
+				pos.z += rand.y;
+
+				element.transform.position = pos;
 				element.transform.localScale = Vector3.zero;
+				element.transform.Rotate(transform.up, Random.Range(-180, 180));
 				shapes.Add(element);
 			}
 		}

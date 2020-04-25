@@ -32,8 +32,13 @@ namespace Iso {
 						force.y = Mathf.Abs(force.y);
 						flickHit.rigidbody.AddForce(force * flickForce, ForceMode.Impulse);
 					}
+				} else {
+					// TODO: play shape on click sound
 				}
 			} else if(Input.GetMouseButtonUp(0)) {
+				if(currentObject) {
+					// TODO: play shape losgelassen sound
+				}
 				currentObject = null;
 			}
 
