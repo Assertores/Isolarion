@@ -544,6 +544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 687445730}
   - component: {fileID: 687445729}
+  - component: {fileID: 687445731}
   m_Layer: 0
   m_Name: Logic
   m_TagString: Untagged
@@ -617,6 +618,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  resetProggres: 1
 --- !u!4 &687445730
 Transform:
   m_ObjectHideFlags: 0
@@ -633,6 +635,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &687445731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687445728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2926befe4574843ba9d94c7a224654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,7 +1103,6 @@ GameObject:
   - component: {fileID: 1208687871}
   - component: {fileID: 1208687870}
   - component: {fileID: 1208687869}
-  - component: {fileID: 1208687868}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1117,18 +1130,6 @@ RectTransform:
   m_AnchoredPosition: {x: -32.3, y: 85.1}
   m_SizeDelta: {x: 99.4, y: 43.3}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1208687868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208687866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d2926befe4574843ba9d94c7a224654, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1208687869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1172,8 +1173,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1208687868}
-        m_MethodName: Execute
+      - m_Target: {fileID: 687445731}
+        m_MethodName: DoCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

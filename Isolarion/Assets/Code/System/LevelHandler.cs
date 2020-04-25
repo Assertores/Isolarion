@@ -14,6 +14,7 @@ namespace Iso {
 		[SerializeField] AnimationCurve outTransitionScale;
 		[SerializeField] float inTransitionTime = 0.5f;
 		[SerializeField] AnimationCurve inTransitionScale;
+		[SerializeField] bool resetProggres = false;
 
 		int currentLevel = 0;
 
@@ -36,6 +37,9 @@ namespace Iso {
 					return;
 				}
 			}
+			if(resetProggres) {
+				PlayerPrefs.SetInt("currentLevel", 0);
+			}
 #endif
 
 			if(!levelHolder) {
@@ -47,7 +51,16 @@ namespace Iso {
 				shapeSpawnPosition = levelHolder;
 			}
 
-			StartCoroutine(IELevelChangeIn(levels[0]));
+			currentLevel = PlayerPrefs.GetInt("currentLevel");
+
+			if(currentLevel < levels.Length) {
+				StartCoroutine(IELevelChangeIn(levels[currentLevel]));
+			}
+
+		}
+
+		private void OnDestroy() {
+			PlayerPrefs.SetInt("currentLevel", currentLevel);
 		}
 
 		public bool NextLevel() {
