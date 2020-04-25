@@ -10,6 +10,10 @@ namespace Iso {
 		[SerializeField] Transform levelHolder;
 		[SerializeField] GameObject p_pin;
 		[SerializeField] Transform shapeSpawnPosition;
+		[SerializeField] float outTransitionTime = 0.5f;
+		[SerializeField] AnimationCurve outTransitionScale;
+		[SerializeField] float inTransitionTime = 0.5f;
+		[SerializeField] AnimationCurve inTransitionScale;
 
 		int currentLevel = 0;
 
@@ -43,29 +47,86 @@ namespace Iso {
 				shapeSpawnPosition = levelHolder;
 			}
 
-			SerialiceLevel(levels[0]);
+			StartCoroutine(IELevelChangeIn(levels[0]));
 		}
 
 		public bool NextLevel() {
 			currentLevel++;
 			if(currentLevel < levels.Length) {
-				SerialiceLevel(levels[currentLevel]);
+				StartCoroutine(IELevelChangeOut(levels[currentLevel]));
 				return true;
 			}
 			return false;
 		}
 
-		void SerialiceLevel(LevelData level) {
+		IEnumerator IELevelChangeOut(LevelData nextLevel) {
+			GlobalVariables.s_instance.isInTransition = true;
+			float startTime = Time.time;
+
+			// TODO: seamce computationally intensive. may use animations insted
+			while(startTime + outTransitionTime > Time.time) {
+				float scale = outTransitionScale.Evaluate((Time.time - startTime) / outTransitionTime);
+				foreach(Transform it in levelHolder) {
+					it.localScale = new Vector3(scale, scale, scale);
+				}
+				yield return null;
+			}
+
+			DestroyLevel();
+			StartCoroutine(IELevelChangeIn(nextLevel));
+		}
+
+		IEnumerator IELevelChangeIn(LevelData nextLevel) {
+			GlobalVariables.s_instance.isInTransition = true;
+			float startTime = Time.time;
+
+			List<GameObject> pins;
+			List<GameObject> shapes;
+			SerialiceLevel(nextLevel, out pins, out shapes);
+
+			// TODO: seamce computationally intensive. may use animations insted
+			while(startTime + inTransitionTime > Time.time) {
+				float scale = inTransitionScale.Evaluate((Time.time - startTime) / inTransitionTime);
+				foreach(var it in pins) {
+					it.transform.localScale = new Vector3(scale, scale, scale);
+				}
+				foreach(var it in shapes) {
+					it.transform.localScale = new Vector3(scale, scale, scale);
+				}
+				yield return null;
+			}
+
+			foreach(var it in pins) {
+				it.transform.localScale = Vector3.one;
+			}
+			foreach(var it in shapes) {
+				it.transform.localScale = Vector3.one;
+			}
+
+			GlobalVariables.s_instance.isInTransition = false;
+		}
+
+		void DestroyLevel() {
 			foreach(Transform it in levelHolder) {
 				Destroy(it.gameObject);
 			}
+		}
 
+		void SerialiceLevel(LevelData level, out List<GameObject> pins, out List<GameObject> shapes) {
+			pins = new List<GameObject>();
+			shapes = new List<GameObject>();
 			foreach(var it in level.Pins) {
-				Instantiate(p_pin, levelHolder).transform.position = new Vector3(it.x, 0.0f, it.y);
+				var element = Instantiate(p_pin, levelHolder);
+				element.transform.position = new Vector3(it.x, 0.0f, it.y);
+				element.transform.localScale = Vector3.zero;
+				pins.Add(element);
 			}
 
 			foreach(var it in level.Shapes) {
-				Instantiate(it, levelHolder).transform.position = shapeSpawnPosition.position;
+				var element = Instantiate(it, levelHolder);
+				element.transform.position = shapeSpawnPosition.position;
+				element.transform.localScale = Vector3.zero;
+				shapes.Add(element);
 			}
 		}
 	}

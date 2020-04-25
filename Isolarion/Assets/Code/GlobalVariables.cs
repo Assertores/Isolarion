@@ -9,5 +9,7 @@ namespace Iso {
 		public float pathHight = 0.2f;
 		public float feedbackLineLifetime = 1.0f;
 		public GameObject feedbackLinePrefab;
+
+		[HideInInspector] public bool isInTransition;
 	}
 }

@@ -15,12 +15,11 @@ namespace Iso {
 		GameObject currentObject;
 		Vector3 offset;
 
-		void Start() {
-
-		}
-
-		// Update is called once per frame
 		void Update() {
+			if(GlobalVariables.s_instance.isInTransition) {
+				return;
+			}
+
 			if(Input.GetMouseButtonDown(0)) {
 				offset = GetShape(out currentObject);
 				// absolutly on the wrong place but my curren system forces me to do it that way

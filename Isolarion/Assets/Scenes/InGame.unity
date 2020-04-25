@@ -567,6 +567,56 @@ MonoBehaviour:
   levelHolder: {fileID: 0}
   p_pin: {fileID: 5773347111109774028, guid: 260e3a10d02a1c04685167e5e4a1405f, type: 3}
   shapeSpawnPosition: {fileID: 0}
+  outTransitionTime: 1
+  outTransitionScale:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.9990289
+      outSlope: -0.9990289
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.0009710789
+      inSlope: -0.9990289
+      outSlope: -0.9990289
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  inTransitionTime: 1
+  inTransitionScale:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &687445730
 Transform:
   m_ObjectHideFlags: 0
