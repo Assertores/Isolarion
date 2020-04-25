@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ff89bc4fc7255419bb1d18def05ec8, type: 3}
+  m_Name: Level_16
+  m_EditorClassIdentifier: 
+  Shapes:
+  - {fileID: 2266865351577780099, guid: 7da5c424c6b41f64f9cbae120be1acc3, type: 3}
+  - {fileID: 3754649980825794985, guid: 81be3e4c38fedd7429a61cb4574d32ea, type: 3}
+  - {fileID: 4435424548362034273, guid: 99c0c0c6889270d4f8c069fd33d2d1b3, type: 3}
+  - {fileID: 4435424548362034273, guid: 99c0c0c6889270d4f8c069fd33d2d1b3, type: 3}
+  Pins:
+  - {x: -0.085, y: -0.15600002}
+  - {x: 0.53165495, y: -0.12658763}
+  - {x: 0.3352671, y: -0.3965369}
+  - {x: 0.16392687, y: 0.030632317}
+  - {x: 0.13391393, y: -0.2585246}
+  - {x: 0.21477178, y: -0.50879675}
+  - {x: -0.049578413, y: -0.38815516}
+  - {x: -0.14335789, y: -0.3647376}
+  - {x: -0.16418825, y: -0.08013577}
+  - {x: -0.051476553, y: -0.00037379563}
+  - {x: -0.2833972, y: 0.11838057}
+  - {x: -0.16302502, y: -0.26434833}
+  - {x: -0.43766633, y: -0.40272743}
+  - {x: -0.34868377, y: -0.14613047}

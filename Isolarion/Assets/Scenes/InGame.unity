@@ -261,6 +261,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23f2c10f8b369ef4ea7b35ffbe5ea311, type: 2}
   - {fileID: 11400000, guid: 358ee38f278ac6c4fb14b3025f7cce26, type: 2}
   - {fileID: 11400000, guid: 5478c495cad9f79449c307daa00865d9, type: 2}
+  - {fileID: 11400000, guid: 79dea8faa9e4d714d8c68345becfe53a, type: 2}
+  - {fileID: 11400000, guid: 1e13ec0a66f8b214281756bf7646f7ac, type: 2}
+  - {fileID: 11400000, guid: 9d186d009606c2d48b8f50cfd3d6261c, type: 2}
+  - {fileID: 11400000, guid: 6034989657824b34989c5a3030a2df2f, type: 2}
+  - {fileID: 11400000, guid: 962e2ce550a41cd43b8c50e4acb4ddc3, type: 2}
+  - {fileID: 11400000, guid: 97be9c1b54fcdea4b8c0117c694a3a28, type: 2}
+  - {fileID: 11400000, guid: 2ebd3d5814cfae24ba1f7e2994e5f455, type: 2}
   levelHolder: {fileID: 87088887}
   p_pin: {fileID: 5773347111109774028, guid: 260e3a10d02a1c04685167e5e4a1405f, type: 3}
   shapeSpawnPosition: {fileID: 1246408176}
