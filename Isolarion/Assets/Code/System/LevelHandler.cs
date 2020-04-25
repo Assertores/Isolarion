@@ -15,6 +15,7 @@ namespace Iso {
 		[SerializeField] float inTransitionTime = 0.5f;
 		[SerializeField] AnimationCurve inTransitionScale;
 		[SerializeField] bool resetProggres = false;
+		[SerializeField] float spawnRandomPositionDeviation = 0.2f;
 
 		int currentLevel = 0;
 
@@ -141,8 +142,15 @@ namespace Iso {
 
 			foreach(var it in level.Shapes) {
 				var element = Instantiate(it, levelHolder);
-				element.transform.position = shapeSpawnPosition.position;
+
+				var pos = shapeSpawnPosition.position;
+				var rand = Random.insideUnitCircle * spawnRandomPositionDeviation;
+				pos.x += rand.x;
+				pos.z += rand.y;
+
+				element.transform.position = pos;
 				element.transform.localScale = Vector3.zero;
+				element.transform.Rotate(transform.up, Random.Range(-180, 180));
 				shapes.Add(element);
 			}
 		}
