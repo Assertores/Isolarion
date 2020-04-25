@@ -64,7 +64,7 @@ namespace Iso {
 			element.Play();
 
 			yield return new WaitForSeconds(element.clip.length);
-			Destroy(element);
+			Destroy(element.gameObject);
 		}
 
 		IEnumerator IEPlayMusic() {
