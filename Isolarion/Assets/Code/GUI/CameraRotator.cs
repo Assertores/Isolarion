@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AsserTOOLres;
 
 namespace Iso {
-	public class CameraRotator : MonoBehaviour {
+	public class CameraRotator : Singleton<CameraRotator> {
 
 		[SerializeField] Transform menuPositioning;
 		[SerializeField] GameObject TopButton;
@@ -14,11 +15,15 @@ namespace Iso {
 		Quaternion menuRotation;
 
 		void Start() {
-			gameRotation = Camera.main.transform.rotation;
 			menuRotation = menuPositioning.rotation;
 
-			TopButton.SetActive(true);
+			TopButton.SetActive(false);
 			BottomButton.SetActive(false);
+		}
+
+		public void Activate(Quaternion rot) {
+			gameRotation = rot;
+			TopButton.SetActive(true);
 		}
 
 		public void OnTopButtonPress() {

@@ -55,15 +55,16 @@ namespace Iso {
 			}
 
 			currentLevel = PlayerPrefs.GetInt("currentLevel");
-
-			if(currentLevel < levels.Length) {
-				StartCoroutine(IELevelChangeIn(levels[currentLevel]));
-			}
-
 		}
 
 		private void OnDestroy() {
 			PlayerPrefs.SetInt("currentLevel", currentLevel);
+		}
+
+		public void StartLevel() {
+			if(currentLevel < levels.Length) {
+				StartCoroutine(IELevelChangeIn(levels[currentLevel]));
+			}
 		}
 
 		public bool NextLevel() {
