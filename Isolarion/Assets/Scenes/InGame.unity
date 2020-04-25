@@ -599,6 +599,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0e23b31fcb1204c469e91b3922cdf87d, type: 2}
   - {fileID: 11400000, guid: a1fdab4c1c9b5224c9c2998360c6e4e3, type: 2}
   - {fileID: 11400000, guid: 7a2d516b6c591584babaeca578bdbf87, type: 2}
+  - {fileID: 11400000, guid: 0549dce9856cdaa419f00a23b795d9f6, type: 2}
+  - {fileID: 11400000, guid: 07a1c7e75d1409144a663236e557154a, type: 2}
   levelHolder: {fileID: 87088887}
   p_pin: {fileID: 5773347111109774028, guid: 260e3a10d02a1c04685167e5e4a1405f, type: 3}
   shapeSpawnPosition: {fileID: 1246408176}
@@ -2137,6 +2139,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Handle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499217451201043546, guid: 76dc3b2c47db0374287ecf66d04efb40,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76dc3b2c47db0374287ecf66d04efb40, type: 3}
