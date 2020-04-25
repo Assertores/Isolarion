@@ -7,7 +7,7 @@ using TMPro;
 namespace Iso {
 	public class GUIMuteMusic : MonoBehaviour {
 
-		[SerializeField] AudioMixer _mixer;
+		[SerializeField] AudioMixer mixer;
 		[SerializeField] TextMeshProUGUI text;
 		[SerializeField] Color offColor;
 
@@ -16,13 +16,13 @@ namespace Iso {
 		Color normalColor;
 
 		private void Start() {
-			_mixer.GetFloat("MusicVolume", out startValue);
+			mixer.GetFloat("MusicVolume", out startValue);
 			normalColor = text.color;
 		}
 
 		public void Execute() {
 			isMuted = !isMuted;
-			_mixer.SetFloat("MusicVolume", isMuted ? -80 : startValue);
+			mixer.SetFloat("MusicVolume", isMuted ? -80 : startValue);
 			text.color = isMuted ? offColor : normalColor;
 		}
 	}

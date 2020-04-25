@@ -196,7 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18a651aa45fe68479b96f91043b399e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mixer: {fileID: 0}
+  mixer: {fileID: 24100000, guid: e8fe2f81ec2b7e545a4008d715d543cf, type: 2}
+  text: {fileID: 588047207}
+  offColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &205665928
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Reset
+  m_text: Music
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 070a7e9156a4c1549b22a17a1875f319, type: 2}
   m_sharedMaterial: {fileID: -8068662811677463344, guid: 070a7e9156a4c1549b22a17a1875f319,
@@ -1407,7 +1409,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68fc58f579bbc2940bcaf04472f7421a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mixer: {fileID: 0}
+  mixer: {fileID: 24100000, guid: e8fe2f81ec2b7e545a4008d715d543cf, type: 2}
+  text: {fileID: 1554530165}
+  offColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1105170139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,7 +2001,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: SFX
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 070a7e9156a4c1549b22a17a1875f319, type: 2}
   m_sharedMaterial: {fileID: -8068662811677463344, guid: 070a7e9156a4c1549b22a17a1875f319,
@@ -2067,7 +2071,7 @@ MonoBehaviour:
   m_margin: {x: 3, y: 3, z: 3, w: 3}
   m_textInfo:
     textComponent: {fileID: 1554530165}
-    characterCount: 4
+    characterCount: 3
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
