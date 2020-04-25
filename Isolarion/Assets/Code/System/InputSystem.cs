@@ -29,6 +29,7 @@ namespace Iso {
 				return;
 			}
 
+			// TODO: only if mous position changed
 			if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),
 			out RaycastHit hit,
 			1000.0f,
