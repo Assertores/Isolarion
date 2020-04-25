@@ -88,19 +88,19 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_fontColor32.rgba
-    value: 4281479730
+    value: 4294967295
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_fontColor.r
-    value: 0.19607843
+    value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_fontColor.g
-    value: 0.19607843
+    value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_fontColor.b
-    value: 0.19607843
+    value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_fontColor.a
