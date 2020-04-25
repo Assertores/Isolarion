@@ -1,9 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace Iso {
 	public class GUIHandler : MonoBehaviour {
+
+		[SerializeField] TextMeshProUGUI levelProgression;
+
+		private void Update() {
+			levelProgression.text = LevelHandler.s_instance.currentLevel + "/" + LevelHandler.s_instance.maxLevel;
+		}
+
 		public void DoCheck() {
 			if(!PinHandle.CheckPins()) {
 				return;

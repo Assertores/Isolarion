@@ -17,7 +17,8 @@ namespace Iso {
 		[SerializeField] bool resetProggres = false;
 		[SerializeField] float spawnRandomPositionDeviation = 0.2f;
 
-		int currentLevel = 0;
+		public int currentLevel { get; private set; } = 0;
+		public int maxLevel { get => levels.Length - 1; }
 
 		void Start() {
 #if UNITY_EDITOR
