@@ -918,26 +918,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3407817262141992624, guid: 0d96e8d6179578948a33104502cb7830,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3407817262141992624, guid: 0d96e8d6179578948a33104502cb7830,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3407817262141992624, guid: 0d96e8d6179578948a33104502cb7830,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3407817262141992624, guid: 0d96e8d6179578948a33104502cb7830,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8869318721294308848, guid: 0d96e8d6179578948a33104502cb7830,
         type: 3}
       propertyPath: m_Name
