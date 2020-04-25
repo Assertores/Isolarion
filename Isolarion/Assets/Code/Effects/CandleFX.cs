@@ -16,7 +16,6 @@ namespace Iso {
 
 		bool isInIntensityChange = false;
 		bool isInColorChange = false;
-		bool isInScaleChange = false;
 
 		void Start() {
 			if(!light) {
@@ -33,7 +32,7 @@ namespace Iso {
 		void Update() {
 			if(!isInIntensityChange) {
 				StartCoroutine(ChangeLightIntensity(
-					intansity.Evaluate(Random.Range(0.0f, 1.0f)),
+					Random.Range(0.0f, 1.0f),
 					duration.Evaluate(Random.Range(0.0f, 1.0f))
 				));
 			}
@@ -43,24 +42,23 @@ namespace Iso {
 					duration.Evaluate(Random.Range(0.0f, 1.0f))
 				));
 			}
-			if(!isInScaleChange) {
-				StartCoroutine(ChangeScale(
-					flame,
-					scale.Evaluate(Random.Range(0.0f, 1.0f)),
-					duration.Evaluate(Random.Range(0.0f, 1.0f))
-				));
-			}
 		}
 
-		IEnumerator ChangeLightIntensity(float newIntensity, float duration, float starTimer = 0.0f) {
+		IEnumerator ChangeLightIntensity(float randVal, float duration, float starTimer = 0.0f) {
 			isInIntensityChange = true;
 			yield return new WaitForSeconds(starTimer);
 
 			float startIntensity = light.intensity;
+			float startScale = flame.localScale.x;
 			float startTime = Time.time;
+
+			float newIntensity = intansity.Evaluate(randVal);
+			float newScale = scale.Evaluate(randVal);
 
 			while(startTime + duration > Time.time) {
 				light.intensity = Mathf.Lerp(startIntensity, newIntensity, (Time.time - startTime) / duration);
+				float currenScale = Mathf.Lerp(startScale, newScale, (Time.time - startTime) / duration);
+				flame.localScale = new Vector3(currenScale, currenScale, currenScale);
 				yield return null;
 			}
 			light.intensity = newIntensity;
@@ -91,23 +89,6 @@ namespace Iso {
 			light.color = newColor;
 
 			isInColorChange = false;
-		}
-
-		IEnumerator ChangeScale(Transform element, float newScale, float duration, float starTimer = 0.0f) {
-			isInScaleChange = true;
-			yield return new WaitForSeconds(starTimer);
-
-			float startScale = element.localScale.x;
-			float startTime = Time.time;
-
-			while(startTime + duration > Time.time) {
-				float currentScale = Mathf.Lerp(startScale, newScale, (Time.time - startTime) / duration);
-				element.localScale = new Vector3(currentScale, currentScale, currentScale);
-				yield return null;
-			}
-			element.localScale = new Vector3(newScale, newScale, newScale);
-
-			isInScaleChange = false;
 		}
 	}
 }
