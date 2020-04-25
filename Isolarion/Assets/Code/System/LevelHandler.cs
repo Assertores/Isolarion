@@ -71,7 +71,7 @@ namespace Iso {
 				return false;
 			}
 			StartCoroutine(IELevelChangeOut(levels[currentLevel]));
-			return false;
+			return true;
 		}
 
 		IEnumerator IELevelChangeOut(LevelData nextLevel) {
