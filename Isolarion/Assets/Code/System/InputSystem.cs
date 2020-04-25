@@ -11,6 +11,7 @@ namespace Iso {
 		[SerializeField] LayerMask flickMask;
 		[SerializeField] float flickForce = 1.0f;
 		[SerializeField] float rotationSpeed = 1.0f;
+		[SerializeField] float rotationKey = 1.0f;
 
 		GameObject currentObject;
 		Vector3 offset;
@@ -56,6 +57,14 @@ namespace Iso {
 			}
 
 			currentObject.transform.Rotate(transform.up, Input.mouseScrollDelta.y * rotationSpeed);
+			float rotation = 0;
+			if(Input.GetKey(KeyCode.Q)) {
+				rotation += rotationKey;
+			}
+			if(Input.GetKey(KeyCode.E)) {
+				rotation -= rotationKey;
+			}
+			currentObject.transform.Rotate(transform.up, rotation * Time.deltaTime);
 		}
 
 		Vector3 GetShape(out GameObject target) {
