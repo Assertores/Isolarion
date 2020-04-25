@@ -29,8 +29,9 @@ namespace Iso {
 						out RaycastHit flickHit,
 						1000.0f,
 						flickMask)) {
-
-						flickHit.rigidbody.AddForceAtPosition((flickHit.point - Camera.main.transform.position).normalized * flickForce, flickHit.point);
+						Vector3 force = Random.insideUnitSphere.normalized;
+						force.y = Mathf.Abs(force.y);
+						flickHit.rigidbody.AddForce(force * flickForce, ForceMode.Impulse);
 					}
 				}
 			} else if(Input.GetMouseButtonUp(0)) {

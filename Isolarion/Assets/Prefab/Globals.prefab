@@ -82,5 +82,5 @@ MonoBehaviour:
   flickMask:
     serializedVersion: 2
     m_Bits: 1024
-  flickForce: 0
+  flickForce: 0.02
   rotationSpeed: 1
