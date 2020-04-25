@@ -601,6 +601,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7a2d516b6c591584babaeca578bdbf87, type: 2}
   - {fileID: 11400000, guid: 0549dce9856cdaa419f00a23b795d9f6, type: 2}
   - {fileID: 11400000, guid: 07a1c7e75d1409144a663236e557154a, type: 2}
+  - {fileID: 11400000, guid: 39e1adde239a43c46a8e025939ba29a1, type: 2}
   levelHolder: {fileID: 87088887}
   p_pin: {fileID: 5773347111109774028, guid: 260e3a10d02a1c04685167e5e4a1405f, type: 3}
   shapeSpawnPosition: {fileID: 1246408176}
