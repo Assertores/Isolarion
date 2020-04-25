@@ -33,11 +33,11 @@ namespace Iso {
 						flickHit.rigidbody.AddForce(force * flickForce, ForceMode.Impulse);
 					}
 				} else {
-					// TODO: play shape on click sound
+					AudioHandler.s_instance.PlayAudio(0); // shapeOnClick
 				}
 			} else if(Input.GetMouseButtonUp(0)) {
 				if(currentObject) {
-					// TODO: play shape losgelassen sound
+					AudioHandler.s_instance.PlayAudio(1); // shapeOnReleace
 				}
 				currentObject = null;
 			}

@@ -10,11 +10,11 @@ namespace Iso {
 		public static bool CheckPins() {
 			foreach(var it in s_references) {
 				if(!it.CheckPin()) {
-					// TODO: play level wrong sound
+					AudioHandler.s_instance.PlayAudio(3); // levelFailed
 					return false;
 				}
 			}
-			// TODO: play level complete sound
+			AudioHandler.s_instance.PlayAudio(2); // levelComplete
 			return true;
 		}
 

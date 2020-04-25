@@ -77,7 +77,7 @@ namespace Iso {
 			GlobalVariables.s_instance.isInTransition = true;
 			float startTime = Time.time;
 
-			// TODO: play Level finish sound
+			AudioHandler.s_instance.PlayAudio(4); // leaveLevel
 
 			// TODO: seamce computationally intensive. may use animations insted
 			while(startTime + outTransitionTime > Time.time) {
@@ -96,7 +96,7 @@ namespace Iso {
 			GlobalVariables.s_instance.isInTransition = true;
 			float startTime = Time.time;
 
-			// TODO: play Level start sound
+			AudioHandler.s_instance.PlayAudio(5); // enterLevel
 
 			List<GameObject> pins;
 			List<GameObject> shapes;
