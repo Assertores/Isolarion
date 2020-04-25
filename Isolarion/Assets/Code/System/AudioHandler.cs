@@ -26,7 +26,7 @@ namespace Iso {
 				isReady = false;
 			}
 
-			if(sourceMusic.Length < 6) {
+			if(sourceMusic.Length <= 0) {
 				Debug.LogWarning("no music to play");
 			}
 #endif

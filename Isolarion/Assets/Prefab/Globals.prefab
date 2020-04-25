@@ -1057,6 +1057,7 @@ MonoBehaviour:
     m_Bits: 1024
   flickForce: 0.02
   rotationSpeed: 1
+  rotationKey: 100
 --- !u!114 &4879573219090152166
 MonoBehaviour:
   m_ObjectHideFlags: 0
