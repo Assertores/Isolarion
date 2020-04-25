@@ -16,6 +16,7 @@ namespace Iso {
 		[SerializeField] AnimationCurve inTransitionScale;
 		[SerializeField] bool resetProggres = false;
 		[SerializeField] float spawnRandomPositionDeviation = 0.2f;
+		[SerializeField] Animation endscreenAnimation;
 
 		public int currentLevel { get; private set; } = 0;
 		public int maxLevel { get => levels.Length - 1; }
@@ -68,6 +69,8 @@ namespace Iso {
 		public bool NextLevel() {
 			currentLevel++;
 			if(currentLevel >= levels.Length) {
+				GlobalVariables.s_instance.isInTransition = true;
+				endscreenAnimation.Play();
 				return false;
 			}
 			StartCoroutine(IELevelChangeOut(levels[currentLevel]));

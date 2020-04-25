@@ -908,6 +908,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   resetProggres: 1
   spawnRandomPositionDeviation: 0.2
+  endscreenAnimation: {fileID: 1959470133}
 --- !u!4 &687445730
 Transform:
   m_ObjectHideFlags: 0
@@ -2454,6 +2455,31 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7270329277162020153, guid: 0d96e8d6179578948a33104502cb7830,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270329277162020153, guid: 0d96e8d6179578948a33104502cb7830,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270329277162020153, guid: 0d96e8d6179578948a33104502cb7830,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270329277162020153, guid: 0d96e8d6179578948a33104502cb7830,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270329277162020153, guid: 0d96e8d6179578948a33104502cb7830,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8869318721294308848, guid: 0d96e8d6179578948a33104502cb7830,
         type: 3}
       propertyPath: m_Name
@@ -2461,6 +2487,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d96e8d6179578948a33104502cb7830, type: 3}
+--- !u!111 &1959470133 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 154892469751709148, guid: 0d96e8d6179578948a33104502cb7830,
+    type: 3}
+  m_PrefabInstance: {fileID: 1959470132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2034513767
 GameObject:
   m_ObjectHideFlags: 0
