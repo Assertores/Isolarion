@@ -1029,7 +1029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b64aea46fc35574ab93b72c98d4537e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathHight: 0.2
+  pathHight: 0.088
   feedbackLineLifetime: 1
   feedbackLinePrefab: {fileID: 3311773248072443202, guid: d05f1276b7f9bfe438f661e34cb25c4a,
     type: 3}

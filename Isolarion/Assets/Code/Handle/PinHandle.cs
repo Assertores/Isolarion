@@ -8,36 +8,23 @@ namespace Iso {
 	public class PinHandle : Multiton<PinHandle> {
 
 		public static bool CheckPins() {
-			foreach(var it in s_references) {
-				if(!it.CheckPin()) {
-					AudioHandler.s_instance.PlayAudio(3); // levelFailed
-					return false;
-				}
-			}
-			AudioHandler.s_instance.PlayAudio(2); // levelComplete
-			return true;
-		}
 
-		bool CheckPin() {
-			foreach(var it in s_references) {
-				if(it == this) {
-					continue;
-				}
-
-				NavMeshPath path = new NavMeshPath();
-				if(NavMesh.CalculatePath(transform.position, it.transform.position, NavMesh.AllAreas, path)) {
-					if(path.corners[path.corners.Length-1].x == it.transform.position.x &&
-						path.corners[path.corners.Length - 1].z == it.transform.position.z) {
-						path.corners[0].y = GlobalVariables.s_instance.pathHight;
-						for(int i = 1; i < path.corners.Length; i++) {
-							path.corners[i].y = GlobalVariables.s_instance.pathHight;
-							StartCoroutine(HandleFeedbackLine(path.corners[i - 1], path.corners[i]));
+			for(int i = 0; i < s_references.Count; i++) {
+				for(int j = i + 1; j < s_references.Count; j++) {
+					NavMeshPath path = new NavMeshPath();
+					if(NavMesh.CalculatePath(s_references[i].transform.position, s_references[j].transform.position, NavMesh.AllAreas, path)) {
+						if(path.corners[path.corners.Length - 1].x == s_references[j].transform.position.x &&
+							path.corners[path.corners.Length - 1].z == s_references[j].transform.position.z) {
+							path.corners[0].y = GlobalVariables.s_instance.pathHight;
+							for(int k = 1; k < path.corners.Length; k++) {
+								path.corners[k].y = GlobalVariables.s_instance.pathHight;
+								s_references[i].StartCoroutine(s_references[i].HandleFeedbackLine(path.corners[k - 1], path.corners[k]));
+							}
+							return false;
 						}
-						return false;
 					}
 				}
 			}
-
 			return true;
 		}
 
