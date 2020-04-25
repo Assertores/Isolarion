@@ -35,9 +35,11 @@ namespace Iso {
 #endif
 
 			if(!levelHolder) {
+				Debug.LogWarning("no level Holder specifyed.");
 				levelHolder = new GameObject("AUTO_LevelHolder").transform;
 			}
 			if(!shapeSpawnPosition) {
+				Debug.LogWarning("no spawn location specifyed.");
 				shapeSpawnPosition = levelHolder;
 			}
 

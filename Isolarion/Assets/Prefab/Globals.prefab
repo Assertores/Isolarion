@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2801728623642228792}
   - component: {fileID: 1621104833102064040}
   m_Layer: 0
-  m_Name: Handle
+  m_Name: Globals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,4 +79,8 @@ MonoBehaviour:
   curserMask:
     serializedVersion: 2
     m_Bits: 1
+  flickMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  flickForce: 0
   rotationSpeed: 1

@@ -8,6 +8,8 @@ namespace Iso {
 
 		[SerializeField] LayerMask shapeMask;
 		[SerializeField] LayerMask curserMask;
+		[SerializeField] LayerMask flickMask;
+		[SerializeField] float flickForce = 1.0f;
 		[SerializeField] float rotationSpeed = 1.0f;
 
 		GameObject currentObject;
@@ -21,6 +23,16 @@ namespace Iso {
 		void Update() {
 			if(Input.GetMouseButtonDown(0)) {
 				offset = GetShape(out currentObject);
+				// absolutly on the wrong place but my curren system forces me to do it that way
+				if(!currentObject) {
+					if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),
+						out RaycastHit flickHit,
+						1000.0f,
+						flickMask)) {
+
+						flickHit.rigidbody.AddForceAtPosition((flickHit.point - Camera.main.transform.position).normalized * flickForce, flickHit.point);
+					}
+				}
 			} else if(Input.GetMouseButtonUp(0)) {
 				currentObject = null;
 			}
