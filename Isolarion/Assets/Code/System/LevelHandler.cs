@@ -65,16 +65,18 @@ namespace Iso {
 
 		public bool NextLevel() {
 			currentLevel++;
-			if(currentLevel < levels.Length) {
-				StartCoroutine(IELevelChangeOut(levels[currentLevel]));
-				return true;
+			if(currentLevel >= levels.Length) {
+				return false;
 			}
+			StartCoroutine(IELevelChangeOut(levels[currentLevel]));
 			return false;
 		}
 
 		IEnumerator IELevelChangeOut(LevelData nextLevel) {
 			GlobalVariables.s_instance.isInTransition = true;
 			float startTime = Time.time;
+
+			// TODO: play Level finish sound
 
 			// TODO: seamce computationally intensive. may use animations insted
 			while(startTime + outTransitionTime > Time.time) {
@@ -92,6 +94,8 @@ namespace Iso {
 		IEnumerator IELevelChangeIn(LevelData nextLevel) {
 			GlobalVariables.s_instance.isInTransition = true;
 			float startTime = Time.time;
+
+			// TODO: play Level start sound
 
 			List<GameObject> pins;
 			List<GameObject> shapes;
