@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6ff89bc4fc7255419bb1d18def05ec8, type: 3}
-  m_Name: Level_01
+  m_Name: Level_02
   m_EditorClassIdentifier: 
   Shapes:
   - {fileID: 0}
   - {fileID: 0}
   Pins:
-  - {x: 0.07100001, y: 0.14685893}
-  - {x: -0.0039999783, y: -0.24333918}
-  - {x: -0.31, y: 0.14100003}
+  - {x: 0.17869818, y: 0.2127397}
+  - {x: -0.26430184, y: 0.03173971}
+  - {x: 0.089698136, y: -0.20126033}
+  - {x: -0.18430185, y: -0.15026021}
