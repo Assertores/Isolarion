@@ -137,6 +137,7 @@ namespace Iso {
 				var element = Instantiate(p_pin, levelHolder);
 				element.transform.position = new Vector3(it.x, 0.0f, it.y);
 				element.transform.localScale = Vector3.zero;
+				element.transform.Rotate(transform.up, Random.Range(-180, 180));
 				pins.Add(element);
 			}
 
