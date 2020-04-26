@@ -13,10 +13,10 @@
 
 ## Art
 
-- [ ] lighting
+- [x] lighting
 - [x] pin (pointlight)
 - [x] Shapse (convex and concarve)
-- [ ] Assets
+- [x] Assets
 - [x] Check Button
 - [x] Quit Button
 - [x] VFX
