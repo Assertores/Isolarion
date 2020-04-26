@@ -12,7 +12,8 @@ namespace Iso {
 			" 2: levelComplete\n" +
 			" 3: levelFailed\n" +
 			" 4: leaveLevel\n" +
-			" 5: enterLevel")]
+			" 5: enterLevel\n" +
+			" 6: diceImpackt")]
 		[SerializeField] AudioSource[] sourceAudio;
 
 		[SerializeField] AudioSource[] sourceMusic;
@@ -21,7 +22,7 @@ namespace Iso {
 
 		void Start() {
 #if UNITY_EDITOR
-			if(sourceAudio.Length < 6) {
+			if(sourceAudio.Length < 7) {
 				Debug.LogError("not the right amound of audio sources");
 				isReady = false;
 			}
@@ -35,12 +36,14 @@ namespace Iso {
 			PlayMusic(true);
 		}
 
-		public void PlayAudio(int index) {
+		public AudioSource PlayAudio(int index) {
 			if(!isReady) {
-				return;
+				return null;
 			}
 
-			StartCoroutine(IEPlayAudio(sourceAudio[index]));
+			var element = Instantiate(sourceAudio[index]);
+			StartCoroutine(IEPlayAudio(element));
+			return element;
 		}
 
 		public void PlayMusic(bool start) {
@@ -58,12 +61,13 @@ namespace Iso {
 			}
 		}
 
-		IEnumerator IEPlayAudio(AudioSource original) {
-			var element = Instantiate(original);
-
+		IEnumerator IEPlayAudio(AudioSource element) {
 			element.Play();
 
 			yield return new WaitForSeconds(element.clip.length);
+			while(element.isPlaying) {
+				yield return new WaitForSeconds(0.5f);
+			}
 			Destroy(element.gameObject);
 		}
 

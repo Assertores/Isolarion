@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2518236106547242119}
   - component: {fileID: 6429183089934805695}
   - component: {fileID: 5637640517122311541}
+  - component: {fileID: 8287160567904598738}
   m_Layer: 10
   m_Name: Dice
   m_TagString: Untagged
@@ -62,6 +63,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16, z: 0.16}
   m_Center: {x: 0, y: 0.08, z: 0}
+--- !u!114 &8287160567904598738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8188662385403357482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f144dbbfe3d0ff48a66a913838e2a89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4253722721491403278
 PrefabInstance:
   m_ObjectHideFlags: 0
