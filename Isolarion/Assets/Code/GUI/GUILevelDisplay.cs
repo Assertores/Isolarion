@@ -9,7 +9,7 @@ namespace Iso {
 		[SerializeField] TextMeshProUGUI levelProgression;
 
 		private void Update() {
-			levelProgression.text = LevelHandler.s_instance.currentLevel + "/" + LevelHandler.s_instance.maxLevel;
+			levelProgression.text = (LevelHandler.s_instance.currentLevel + 1) + "/" + (LevelHandler.s_instance.maxLevel + 1);
 		}
 	}
 }
