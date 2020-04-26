@@ -6,7 +6,10 @@ namespace Iso {
 	[RequireComponent(typeof(Collider))]
 	public class ImpactFX : MonoBehaviour {
 		private void OnCollisionEnter(Collision collision) {
-			AudioHandler.s_instance.PlayAudio(6);
+			if(Time.timeSinceLevelLoad < 0.2f) {
+				return;
+			}
+			AudioHandler.s_instance.PlayAudio(6); // diceImpackt
 		}
 	}
 }

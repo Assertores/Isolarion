@@ -20,11 +20,13 @@ namespace Iso {
 								path.corners[k].y = GlobalVariables.s_instance.pathHight;
 								s_references[i].StartCoroutine(s_references[i].HandleFeedbackLine(path.corners[k - 1], path.corners[k]));
 							}
+							AudioHandler.s_instance.PlayAudio(3); // levelFailed
 							return false;
 						}
 					}
 				}
 			}
+			AudioHandler.s_instance.PlayAudio(2); // levelComplete
 			return true;
 		}
 
