@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using AsserTOOLres;
+using System;
 
 namespace Iso {
 	public class LevelHandler : Singleton<LevelHandler> {
+
+		public static Action OnLevelBegin;
 
 		[SerializeField] LevelData[] levels;
 		[SerializeField] Transform levelHolder;
@@ -131,6 +134,8 @@ namespace Iso {
 			foreach(var it in shapes) {
 				it.transform.localScale = Vector3.one;
 			}
+
+			OnLevelBegin?.Invoke();
 
 			GlobalVariables.s_instance.isInTransition = false;
 		}
