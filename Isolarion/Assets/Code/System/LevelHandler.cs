@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using AsserTOOLres;
-using System;
 
 namespace Iso {
 	public class LevelHandler : Singleton<LevelHandler> {
 
-		public static Action OnLevelBegin;
+		public static System.Action OnLevelBegin;
 
 		[SerializeField] LevelData[] levels;
 		[SerializeField] Transform levelHolder;
