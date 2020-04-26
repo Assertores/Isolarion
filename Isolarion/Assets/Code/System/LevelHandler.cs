@@ -78,6 +78,12 @@ namespace Iso {
 			return true;
 		}
 
+		public void ResetLevel() {
+			PlayerPrefs.SetInt("currentLevel", 0);
+			currentLevel = 0;
+			StartCoroutine(IELevelChangeOut(levels[currentLevel]));
+		}
+
 		IEnumerator IELevelChangeOut(LevelData nextLevel) {
 			GlobalVariables.s_instance.isInTransition = true;
 			float startTime = Time.time;

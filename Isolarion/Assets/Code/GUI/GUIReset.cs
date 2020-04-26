@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Iso {
 	public class GUIReset : MonoBehaviour {
 		public void Execute() {
-			PlayerPrefs.SetInt("currentLevel", 0);
+			LevelHandler.s_instance.ResetLevel();
 		}
 	}
 }
