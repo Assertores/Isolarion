@@ -990,6 +990,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book
       objectReference: {fileID: 0}
+    - target: {fileID: 4572188723319943810, guid: 243054b361b21c540911e345b44a657e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5061877414092940886, guid: 243054b361b21c540911e345b44a657e,
         type: 3}
       propertyPath: m_LocalPosition.x
