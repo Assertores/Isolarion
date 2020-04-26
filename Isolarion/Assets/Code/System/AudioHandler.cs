@@ -13,7 +13,8 @@ namespace Iso {
 			" 3: levelFailed\n" +
 			" 4: leaveLevel\n" +
 			" 5: enterLevel\n" +
-			" 6: diceImpackt")]
+			" 6: diceImpackt\n" +
+			" 7: buttonClick")]
 		[SerializeField] AudioSource[] sourceAudio;
 
 		[SerializeField] AudioSource[] sourceMusic;
