@@ -15,12 +15,14 @@ namespace Iso {
 
 		GameObject currentObject;
 		Vector3 offset;
+		Vector3 lastMousePosition;
 
 		void Update() {
 			if(GlobalVariables.s_instance.isInTransition) {
 				return;
 			}
 
+			// holy shit this is the mosed ugly thing i've ever seen.
 			if(Input.GetMouseButtonDown(0)) {
 				offset = GetShape(out currentObject);
 				// absolutly on the wrong place but my curren system forces me to do it that way
@@ -32,6 +34,8 @@ namespace Iso {
 						Vector3 force = Random.insideUnitSphere.normalized;
 						force.y = Mathf.Abs(force.y);
 						flickHit.rigidbody.AddForce(force * flickForce, ForceMode.Impulse);
+					} else {
+						lastMousePosition = Input.mousePosition;
 					}
 				} else {
 					AudioHandler.s_instance.PlayAudio(0); // shapeOnClick
@@ -46,8 +50,10 @@ namespace Iso {
 			if(!currentObject) {
 				return;
 			}
+			if(Input.mousePosition == lastMousePosition) {
+				return;
+			}
 
-			// TODO: only if mous position changed
 			if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),
 			out RaycastHit hit,
 			1000.0f,
