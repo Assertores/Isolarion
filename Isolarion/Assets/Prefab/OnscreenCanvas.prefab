@@ -398,7 +398,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 46.4
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_pageToDisplay: 1
   m_margin: {x: 3, y: 3, z: 3, w: 3}
   m_textInfo:
-    textComponent: {fileID: 0}
+    textComponent: {fileID: 1942040461642568292}
     characterCount: 4
     spriteCount: 0
     spaceCount: 0
@@ -862,7 +862,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 58.66}
-  m_SizeDelta: {x: 0, y: 58.2}
+  m_SizeDelta: {x: 0, y: 98.8}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &2242458785450209341
 CanvasRenderer:
@@ -1056,8 +1056,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 68.53497}
+  m_SizeDelta: {x: 0, y: -137.07007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1568575657768395071
 CanvasRenderer:
@@ -1086,12 +1086,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '!![[this text should be Changed]]!!
-
-    Thx For Playing
-
-    !![[this
-    text should be Changed]]!!'
+  m_text: "You have mastered it.\r\nThe art of isolation.\r\nThe art of constellation\u200B.\r\nAll
+    the shapes are yours, now take them!!\r\ntake the shapes!\r\nand isolate the
+    souls, the souls around you\r\nbecause all souls have to live for their own\r\nand
+    thats the task of the master of the \r\nisolarion."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 070a7e9156a4c1549b22a17a1875f319, type: 2}
   m_sharedMaterial: {fileID: -8068662811677463344, guid: 070a7e9156a4c1549b22a17a1875f319,
@@ -1101,7 +1099,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3472883711
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1161,12 +1159,12 @@ MonoBehaviour:
   m_margin: {x: 3, y: 3, z: 3, w: 3}
   m_textInfo:
     textComponent: {fileID: 7270329277162020153}
-    characterCount: 87
+    characterCount: 278
     spriteCount: 0
-    spaceCount: 12
-    wordCount: 13
+    spaceCount: 50
+    wordCount: 50
     linkCount: 0
-    lineCount: 3
+    lineCount: 9
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
