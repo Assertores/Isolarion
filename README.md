@@ -14,14 +14,14 @@
 ## Art
 
 - [ ] lighting
-- [ ] pin (pointlight)
+- [x] pin (pointlight)
 - [x] Shapse (convex and concarve)
 - [ ] Assets
 - [x] Check Button
 - [x] Quit Button
-- [ ] VFX
-- [ ] Credits
-- [ ] postProcessing
+- [x] VFX
+- [x] Credits
+- [x] postProcessing
 - [x] icon
 
 ## LevelDesign
