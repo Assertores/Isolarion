@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 631571227}
   - component: {fileID: 631571226}
+  - component: {fileID: 989108445151614369}
   m_Layer: 0
   m_Name: Candle Light 02
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
+    m_Bias: 0.001
     m_NormalBias: 0.4
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
@@ -92,6 +93,19 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &989108445151614369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631571225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38be44b5cc2c3bc428725b5a25cc83b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setBias: 0.001
 --- !u!1 &933043190799903241
 GameObject:
   m_ObjectHideFlags: 0
