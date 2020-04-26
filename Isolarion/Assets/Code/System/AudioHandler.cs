@@ -23,7 +23,7 @@ namespace Iso {
 
 		void Start() {
 #if UNITY_EDITOR
-			if(sourceAudio.Length < 7) {
+			if(sourceAudio.Length < 8) {
 				Debug.LogError("not the right amound of audio sources");
 				isReady = false;
 			}
