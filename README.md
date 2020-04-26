@@ -8,8 +8,8 @@
 - [x] Transition Animations and Sounds
 - [ ] ~~Level Generator~~
 - [x] VFX (kertzenflaggern)
-- [ ] Endscreen
-- [ ] Start cameraride
+- [x] Endscreen
+- [x] Start cameraride
 
 ## Art
 
@@ -26,10 +26,10 @@
 
 ## LevelDesign
 
-- [ ] implimentieren
+- [x] implimentieren
 - [ ] progression Designen
 
 ## SoundDesign
 
-- [ ] SFX
-- [ ] BackgroundMusic
+- [x] SFX
+- [x] BackgroundMusic

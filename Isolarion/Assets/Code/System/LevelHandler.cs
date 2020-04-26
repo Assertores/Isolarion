@@ -64,9 +64,10 @@ namespace Iso {
 		}
 
 		public void StartLevel() {
-			if(currentLevel < levels.Length) {
-				StartCoroutine(IELevelChangeIn(levels[currentLevel]));
+			if(currentLevel >= levels.Length) {
+				currentLevel = 0;
 			}
+			StartCoroutine(IELevelChangeIn(levels[currentLevel]));
 		}
 
 		public bool NextLevel() {

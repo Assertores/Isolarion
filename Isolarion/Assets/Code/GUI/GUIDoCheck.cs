@@ -5,6 +5,9 @@ using UnityEngine;
 namespace Iso {
 	public class GUIDoCheck : MonoBehaviour {
 		public void Execute() {
+			if(GlobalVariables.s_instance.isInTransition) {
+				return;
+			}
 			if(!PinHandle.CheckPins()) {
 				return;
 			}
